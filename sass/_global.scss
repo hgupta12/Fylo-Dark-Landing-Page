@@ -1,0 +1,87 @@
+// font-family: 'Open Sans', sans-serif; -- body
+// font-family: 'Raleway', sans-serif; --headings , cta
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  font-size: 0.875rem;
+  font-family: "Open Sans", sans-serif;
+    color: $white;
+    background-color: $darkBlueBack;
+}
+h1,
+h2,
+h3 {
+  margin: 0;
+  color: $white;
+  font-family: "Raleway", sans-serif;
+}
+h1 {
+  font-size: 1.5rem;
+  line-height: 1.5;
+  @include breakpoint-up(medium) {
+    font-size: 2.5rem;
+  }
+}
+p{
+    opacity: 0.9;
+}
+
+a {
+  text-decoration: none;
+  color: $white;
+}
+
+button {
+  background-image: linear-gradient(to right, $cyan, $blue);
+  color: $white;
+  border: none;
+  border-radius: 50px;
+  width: 80%;
+  max-width: 15rem;
+  padding: 1rem 0;
+  position: relative;
+  
+  &::after {
+
+  content: "";
+  
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: $white;
+  border-radius: 50px;
+  opacity: 0;
+  transition: 0.3s;
+}
+  &:hover {
+      &::after{
+          opacity: 0.3;
+      }
+  }
+}
+.container {
+  @include breakpoint-down(small) {
+      width: 90%;
+      margin: auto;
+      text-align: center;
+  }
+}
+
+.pb {
+  padding-bottom: 1.75rem;
+}
+
+// bg
+.over-bg{
+    position: relative;
+    z-index: 2;
+}
+

@@ -1,0 +1,62 @@
+.nav{
+    // background: $darkBlueIntro;
+    position: absolute;
+    left: 0;
+    right: 0;
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.75rem;
+    &__container{
+        display: flex;
+        padding: 1.5rem 0;
+        justify-content: space-between;
+        align-items: center;
+        @include breakpoint-up(medium){
+
+            padding: 2rem 2.5rem;
+        }
+    }
+img{
+    width: 5rem;
+    height: auto;
+    @include breakpoint-up(medium){
+
+        width: 6.5rem;
+        
+    }
+
+}
+&__links{
+    a{
+        position: relative;
+        opacity: 0.75;
+        transition: 0.3s;
+        &:not(:last-child){
+            margin-right: 1.5rem;
+            @include breakpoint-up(medium){
+
+                margin-right: 1.75rem;
+            }
+        }
+        &:hover{
+            opacity: 1;
+            font-weight: 600;
+            &::after{
+                content: '';
+                display: inline-block;
+                position: absolute;
+                bottom: 0;
+                top: 1rem;
+                left: 0;
+                right: 0;
+                width: 0%;
+                
+                height: 2px;
+                background-color: $white;
+                animation: fade-in 0.3s forwards;
+            }
+
+            
+        }
+    }
+}
+}

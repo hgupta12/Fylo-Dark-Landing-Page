@@ -1,0 +1,78 @@
+.product{
+    width: 80%;
+    margin: 0 auto;
+    padding-bottom: 10rem;
+    @include breakpoint-up(medium){
+        width: 85%;
+    }
+    &>img{
+        width: 100%;
+        margin-bottom: 3.25rem;
+        @include breakpoint-up(medium){
+            width: 50%;
+            text-align: left;
+        }
+    }
+    @include breakpoint-up(medium){
+        display: flex;
+        align-items: center;
+        gap: 3.5rem;
+    }
+    &__text{
+          @include breakpoint-up(medium){
+              width: 90%;
+          }
+        h2{
+            font-size: 1.125rem;
+            margin-bottom: 1.5rem;
+            @include breakpoint-up(medium){
+                width: 60%;
+                font-size: 2rem;
+                
+            }
+    }
+    p{
+        font-size: 0.8375rem;
+        margin-bottom: 1rem;
+    }
+    
+    .show{
+        font-size: 0.75rem;
+        font-weight: 100;
+        color: $cyan;
+        display: inline-block;
+        position: relative;
+        transition: 0.3s;
+        cursor: pointer;
+        &::after{
+            content: '';
+                display: inline-block;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                background-color: $cyan;
+                height: 2px;
+                transform: translateY(0.375rem);
+                
+        }
+        &:hover{
+            color: white;
+            &::after{
+                background-color: white;
+            }
+            svg{
+                use{
+                    fill: white;
+                }
+            }
+        }
+        svg{
+            transform: translateY(0.25rem);
+            
+           
+        }
+       
+    }
+}
+}

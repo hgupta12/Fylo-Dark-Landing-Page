@@ -1,0 +1,84 @@
+.email{
+    background-color: $darkBlueTest;
+    border-radius: 5px;
+    padding: 2rem 1rem;
+    position: relative;
+    box-shadow: 0px 2px 20px rgb(9, 6, 27);
+    transform: translateY(50%);
+    @include breakpoint-up(medium){
+        width: 60%;
+        margin: 0 auto;
+        text-align: center;
+    }
+    h3{
+        padding-bottom: 1rem;
+        @include breakpoint-up(medium){
+            font-size: 1.75rem;
+        }
+    }
+    p{
+        width: 88%;
+        margin: 0 auto;
+        padding-bottom: 1.5rem;
+    }
+    &__input{
+        button{
+            @include breakpoint-up(medium){
+                width: 100%;
+            }
+        }
+        @include breakpoint-up(medium){
+            display: grid;
+            grid-template-columns: 5fr 2fr;
+            gap: 1rem;
+            justify-content: space-around;
+            align-items: center;
+            width: 90%;
+            margin: 0 auto;
+        }
+       
+        input{
+            outline: none;
+            border: none;
+            width: 80%;
+            border-radius: 50px;
+            padding: 0.75rem 0;
+            margin-bottom: 1.5rem;
+             &::-webkit-input-placeholder{
+                 opacity: 0.4;
+                 font-size: 0.75rem;
+                 transform: translateX(1rem);
+             }
+             
+            &:focus{
+                cursor: text;
+                padding-left: 1.5rem;
+                
+            }
+            @include breakpoint-up(medium){
+                width: 100%;
+                
+                padding: 1rem 0;
+                margin-bottom: 0;
+            }
+        }
+        
+    }
+}
+
+.invalid{
+    position: relative;
+    &::after{
+        content: 'Please enter a valid email address';
+        position: absolute;
+        display: block;
+        left: 2rem;
+        top: 3rem;
+        text-align: left;
+        font-size: 0.75rem;
+        color: $lightRed;
+        @include breakpoint-down(small){
+            top: 2.5rem;
+        }
+    }
+}
